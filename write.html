@@ -15,6 +15,28 @@
         li{
             list-style: none;
         }
+        body{
+            background-color:rgb(242, 153, 89);
+            position: relative; 
+        }
+        
+        #canvas-wrapper{
+            position: relative;
+            top: 1rem;
+        }
+        #tutorial{
+            width: 6rem;
+            height: 3rem;
+            position: relative;
+            left: 50%;
+            transform: translate(-50%,0);
+        }
+        #canvas-wrapper p{
+            font-family: 'Courier New', Courier, monospace;
+            font-size: .3rem;
+            color: rgb(147,115,173);
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -37,51 +59,25 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="index.html">LOVE<span class="sr-only">(current)</span></a></li>
-                <li><a href="#">爱之初遇见</a></li>
-                <li class="active"><a href="ing.html">爱之进行时</a></li>
+                <li><a href="say.html">爱，说出来<span class="sr-only">(current)</span></a></li>
+                <li><a href="look.html">爱，你看<span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="write.html">爱，写下来<span class="sr-only">(current)</span></a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-<ul id="time">
-    <li id="day"></li>
-    <li id="hour"></li>
-    <li id="min"></li>
-    <li id="sec"></li>
-</ul>
-<canvas></canvas>
+
+
+
+
+
+
+
 <script src="jquery-2.1.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/rem.js"></script>
 <script>
-    function show(){
-    MemorialDay=new Date("November 25,2017");
-    today=new Date();
-    // console.log(today.getTime());
-    // console.log(MemorialDay.getTime());
-    timeold=(today.getTime()-MemorialDay.getTime());
-    sectimeold=timeold/1000;
-    secondsold=Math.floor(sectimeold);
-    msPerDay=24*60*60*1000;
-    e_daysold=timeold/msPerDay;
-    daysold=Math.floor(e_daysold);
-    e_hrsold=(e_daysold-daysold)*24;
-    hrsold=Math.floor(e_hrsold);
-    e_minsold=(e_hrsold-hrsold)*60;
-    minsold=Math.floor((e_hrsold-hrsold)*60);
-    seconds=Math.floor((e_minsold-minsold)*60);
-    // console.log(daysold,hrsold,minsold,seconds);
-    var day=document.getElementById('day');
-    var hour=document.getElementById('hour');
-    var min=document.getElementById('min');
-    var sec=document.getElementById('sec');
-    day.innerHTML=daysold;
-    hour.innerHTML=hrsold;
-    min.innerHTML=minsold;
-    sec.innerHTML=seconds;
-    }
-    setInterval(function () {
-        show()
-    },1000);
+    
 </script>
 </body>
 </html>
