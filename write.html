@@ -15,28 +15,71 @@
         li{
             list-style: none;
         }
+        a{
+            text-decoration: none;
+            color:inherit;
+        }
+        #goback{
+            font-size: .521rem;
+            color: rgb(147,115,173);
+            margin-left: .3rem;
+            margin-top: -.2rem;
+        }
         body{
             background-color:rgb(242, 153, 89);
             position: relative; 
         }
-        
-        #canvas-wrapper{
-            position: relative;
-            top: 1rem;
-        }
-        #tutorial{
-            width: 6rem;
-            height: 3rem;
-            position: relative;
-            left: 50%;
-            transform: translate(-50%,0);
-        }
-        #canvas-wrapper p{
+        .describ{
             font-family: 'Courier New', Courier, monospace;
             font-size: .3rem;
             color: rgb(147,115,173);
             text-align: center;
+            margin-top: .5rem;
         }
+        .lanren{width:6rem;overflow:hidden;margin:.7rem auto;}
+        .flip-3d { 
+            perspective: 3rem; width: 33%; float: left;  
+        }
+        .flip-3d figure { 
+        position: relative; 
+        transform-style: preserve-3d; 
+        transition: 1s transform;
+        font-size: .6rem;
+        margin:.2rem;
+        height: 1.58rem;
+        }
+        .flip-3d figure img { 
+        width: 100%; height: auto; 
+        }
+        .flip-3d figure figcaption { 
+        position: absolute; 
+        width: 100%; height: 100%; top: 0; 
+        transform: rotateY(.5turn) translateZ(1px); 
+        background: rgba(255,255,255,0.9); 
+        text-align: center; 
+        padding-top: 45%; 
+        opacity: 0.6; 
+        transition: 1s .5s opacity; 
+        }
+        .flip-3d:hover figure { transform: rotateY(.5turn); }
+        .flip-3d:hover figure figcaption { opacity: 1; }
+        .flip-3d figure:after { 
+        content: " "; display: block;
+        height: 8vw; width: 100%; 
+        transform: rotateX(90deg); 
+        background-image:radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%); 
+        }
+        @media screen and (max-width: 800px) { 
+        #flip-3d { perspective-origin: center top; }
+            div#flip-3d figure { 
+            float: none; 
+            width: 50%; 
+            margin: 0 auto; 
+            margin-bottom: 12vw; 
+        }
+        .flip-3d figure figcaption{font-size: 0.1rem;}
+            div#flip-3d figure:last-child { display: none; }
+	    }
     </style>
 </head>
 <body>
@@ -61,12 +104,71 @@
                 <li><a href="index.html">LOVE<span class="sr-only">(current)</span></a></li>
                 <li><a href="say.html">爱，说出来<span class="sr-only">(current)</span></a></li>
                 <li><a href="look.html">爱，你看<span class="sr-only">(current)</span></a></li>
-                <li class="active"><a href="write.html">爱，写下来<span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="write.html">爱，记下来<span class="sr-only">(current)</span></a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-
+<a href="index.html"><i class="glyphicon glyphicon-chevron-left" id="goback"></i></a>
+<div class="describ">
+    <p>试着点一下下面的图片，嘻嘻嘻</p>
+</div>
+<div class="lanren">
+    <div class="flip-3d">
+         <figure>
+            <img src="imgs/1.JPG">
+            <figcaption>在一起了，耶开心</figcaption>
+        </figure>
+    </div>
+    <div class="flip-3d">
+        <figure>
+            <img src="imgs/2.JPG">
+            <figcaption>第一次牵手</figcaption>
+          </figure>
+    </div>
+    <div class="flip-3d">
+        <figure>
+            <img src="imgs/3.JPG">
+            <figcaption>下雪了诶</figcaption>
+        </figure>
+    </div>
+    <div class="flip-3d">
+        <figure>
+            <img src="imgs/4.JPG">
+            <figcaption>泡泡有个小鹿角</figcaption>
+        </figure>
+    </div>
+    <div class="flip-3d">
+        <figure>
+            <img src="imgs/5.JPG">
+            <figcaption>一起坐高铁回家</figcaption>
+        </figure>
+    </div>
+    <div class="flip-3d">
+        <figure>
+            <img src="imgs/6.JPG">
+            <figcaption>刘海都是爱我的形状</figcaption>
+        </figure>
+    </div>
+    <div class="flip-3d">
+        <figure>
+            <img src="imgs/7.JPG">
+            <figcaption>第一次旅行</figcaption>
+        </figure>
+    </div>
+    <div class="flip-3d">
+        <figure>
+            <img src="imgs/8.JPG">
+            <figcaption>一起坐有轨电车</figcaption>
+        </figure>
+    </div>
+    <div class="flip-3d">
+        <figure>
+            <img src="imgs/9.JPG">
+            <figcaption>未完，待续...</figcaption>
+        </figure>
+    </div>
+</div>
 
 
 
